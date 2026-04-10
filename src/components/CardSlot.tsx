@@ -32,14 +32,13 @@ export function CardSlot({
       {label && <span className="text-[10px] sm:text-xs text-zinc-500 font-medium">{label}</span>}
       <button
         onClick={onClick}
-        className={`w-14 h-20 sm:w-16 sm:h-24 md:w-20 md:h-28 rounded-lg sm:rounded-xl flex flex-col items-center justify-center text-xl sm:text-2xl md:text-3xl font-bold transition-all relative
+        className={`w-14 h-20 sm:w-16 sm:h-24 md:w-20 md:h-28 rounded-lg sm:rounded-xl flex flex-col items-center justify-center text-xl sm:text-2xl md:text-3xl font-bold transition-all relative border-2
           ${card 
-            ? 'bg-white shadow-lg border border-zinc-200' 
-            : 'bg-zinc-900/50 border-2 border-dashed border-zinc-700 text-zinc-600 hover:bg-zinc-800/50'
+            ? 'bg-white shadow-lg border-zinc-200 hover:border-zinc-400 hover:ring-2 hover:ring-zinc-400/50' 
+            : 'bg-zinc-900/50 border-dashed border-zinc-700 text-zinc-600 hover:bg-zinc-800/50 hover:border-zinc-500 hover:ring-2 hover:ring-zinc-500/50'
           }
-          ${isActive && !card ? 'border-emerald-500/50 bg-emerald-500/10 text-emerald-500' : ''}
-          ${isActive && card ? 'ring-2 ring-emerald-500 ring-offset-2 ring-offset-zinc-950' : ''}
-          ${!isActive ? 'hover:-translate-y-1 hover:border-zinc-500' : ''}
+          ${isActive ? '!border-white !border-solid ring-4 !ring-white/40' : ''}
+          ${!isActive ? 'hover:-translate-y-1' : ''}
         `}
       >
         {card ? (
